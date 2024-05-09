@@ -8,16 +8,23 @@ const Navbar = () => {
         <nav className='sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all'>
             <MaxWidthWrapper>
                 <div className='flex h-14 items-center justify-between border-b border-zinc-200 flex-row'>
-                    <Link
-                        href='/'
-                        className='flex z-40 font-semibold'>
-                        <span>quill.</span>
+                    {/*This link tag is causing problems with the navbar layout - I cannot figure out what the problem is.*/}
+                    <Link href = '/' className='flex z-40 font-semibold'>
+                        <svg>Project Name.</svg>
                     </Link>
+                    
+                {/*to do add mobile navbar*/}
 
-                    {/* Spacer to push other elements to the right */}
-                    <div className="flex-grow"></div>
-
-                    {/* to do: add mobile nav bar*/}
+                    <div className='hidden items-center space-x-4 sm:flex'>
+                        <>
+                            <Link href='/pricing' className={buttonVariants({
+                                variant: 'ghost',
+                                size: 'sm'
+                            })}>
+                                <svg>Pricing</svg>
+                            </Link>
+                        </>
+                    </div>
                 </div>
             </MaxWidthWrapper>
         </nav>
